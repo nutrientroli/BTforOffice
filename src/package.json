@@ -1,0 +1,16 @@
+{
+  "name": "bt_test2",
+  "version": "0.0.1",
+  "description": "Test para probar modules BT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "behaviortree": "^2.0.2",
+    "utf8": "^3.0.0",
+    "xlsx": "^0.14.1"
+  }
+}
