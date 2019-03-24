@@ -1,0 +1,14 @@
+{
+  "type": "sequence",
+  "name": "Root",
+  "nodes": [
+    {
+      "type": "readXLSX",
+      "name": "Read file with XLSX type"
+    },
+    {
+      "type": "writeXLSX",
+      "name": "Write file with XLSX type"
+    }
+  ]
+}
