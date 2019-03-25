@@ -5,18 +5,16 @@ const XLSX = require('xlsx');
 
 const writeXLSX = new Task({
   start: function(blackboard) {
-    //if(blackboard.list == null) return FAILURE;
+    this.list = blackboard.list;
+    this.file = blackboard.writefile;
   },
   end: function(blackboard) { },
   run: function(blackboard) {
-    console.log('writeFile');
-    console.log(blackboard.list);
-    /*var workbook = new Workbook();
-    var worksheet = {};
+    var worksheet = XLSX.utils.aoa_to_sheet(this.list);
+    var workbook = XLSX.utils.book_new();
     workbook.SheetNames.push('result');
     workbook.Sheets['result'] = worksheet;
-    XLSX.writeFile(workbook, blackboard.writefile);*/
-
+    XLSX.writeFile(workbook, this.file);
     return SUCCESS;
   }
 });

@@ -15,7 +15,8 @@ const readXLSX = new Task({
     var workbook = XLSX.readFile(this.file);
     var first_sheet_name = workbook.SheetNames[0];
     var worksheet = workbook.Sheets[first_sheet_name];
-    var range = {s: {c:0, r:0}, e: {c:4, r:4 }}; //calculate?
+    var ref = worksheet['!ref'].split(':');
+    var range = {s: XLSX.utils.decode_cell(ref[0]), e: XLSX.utils.decode_cell(ref[1])};
     for(var R = range.s.r; R <= range.e.r; ++R) {
       let localList = [];
       for(var C = range.s.c; C <= range.e.c; ++C) {
