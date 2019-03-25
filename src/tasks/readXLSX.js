@@ -4,19 +4,18 @@ const { Task, SUCCESS, FAILURE, BehaviorTree } = require('behaviortree');
 const XLSX = require('xlsx');
 
 const readXLSX = new Task({
-  start: function(blackboard) { },
-  end: function(blackboard) { },
+  start: function(blackboard) {
+    this.file = blackboard.readfile;
+  },
+  end: function(blackboard) {
+    blackboard.list = this.list;
+  },
   run: function(blackboard) {
-    console.log('read');
-    //INPUT_PARAMETERS:
-    var range = {s: {c:0, r:0}, e: {c:4, r:4 }}; //calculate?
-    //OUTPUT_PARAMETERS:
-    var list = [];
-
-    var workbook = XLSX.readFile(blackboard.readfile);
+    this.list = [];
+    var workbook = XLSX.readFile(this.file);
     var first_sheet_name = workbook.SheetNames[0];
     var worksheet = workbook.Sheets[first_sheet_name];
-
+    var range = {s: {c:0, r:0}, e: {c:4, r:4 }}; //calculate?
     for(var R = range.s.r; R <= range.e.r; ++R) {
       let localList = [];
       for(var C = range.s.c; C <= range.e.c; ++C) {
@@ -25,13 +24,10 @@ const readXLSX = new Task({
         if (worksheet[cell_ref]) localList.push(worksheet[cell_ref].v);
         else localList.push('');
       }
-      list.push(localList);
+      this.list.push(localList);
     }
-    if(list != null) {
-      blackboard.list = list;
-      return SUCCESS;
-    }
-    return FAILURE;
+    if(!this.list) return FAILURE;
+    return SUCCESS;
   }
 });
 
