@@ -9,27 +9,23 @@ const readXLSX = new Task({
   run: function(blackboard) {
     console.log('read');
     //INPUT_PARAMETERS:
-    var columns = [ { column: 'A', valor: '1' }, { column: 'B', valor: '2' } ]; //Hacer que sea dinamico.
+    var range = {s: {c:0, r:0}, e: {c:4, r:4 }}; //calculate?
     //OUTPUT_PARAMETERS:
     var list = [];
 
-    var workbook = XLSX.readFile(blackboard.readfile); //Cargamos fichero
-    var first_sheet_name = workbook.SheetNames[0]; //obtenemos referencia a la hoja
-    var worksheet = workbook.Sheets[first_sheet_name]; //obtenemos la hoja
-    var row = 1; //fila inicial.
-    var cell; //variable de celda actual.
+    var workbook = XLSX.readFile(blackboard.readfile);
+    var first_sheet_name = workbook.SheetNames[0];
+    var worksheet = workbook.Sheets[first_sheet_name];
 
-    for (cell = worksheet['A' + row]; cell;) { //Iteracion de filas.
+    for(var R = range.s.r; R <= range.e.r; ++R) {
       let localList = [];
-      for (let i = 0; i < columns.length; i++) { //Iteracion de columnas.
-        let col = columns[i].column;
-        col += row;
-        if (worksheet[col]) localList.push(worksheet[col].v);
+      for(var C = range.s.c; C <= range.e.c; ++C) {
+        let cell_address = {c:C, r:R};
+        let cell_ref = XLSX.utils.encode_cell(cell_address);
+        if (worksheet[cell_ref]) localList.push(worksheet[cell_ref].v);
         else localList.push('');
       }
       list.push(localList);
-      row++;
-      cell = worksheet['A' + row]; //Reset de columna.
     }
     if(list != null) {
       blackboard.list = list;
