@@ -3,6 +3,7 @@
 const { Task, SUCCESS, FAILURE, BehaviorTree } = require('behaviortree');
 const XLSX = require('xlsx');
 
+//Behavior Tree implementation
 const readXLSX = new Task({
   start: function(blackboard) {
     this.file = blackboard.readfile;
@@ -32,6 +33,9 @@ const readXLSX = new Task({
   }
 });
 
+//References
 BehaviorTree.register('readXLSX', readXLSX);
-
 module.exports = readXLSX;
+
+//Extra functions
+//...

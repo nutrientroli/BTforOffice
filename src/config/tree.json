@@ -7,6 +7,10 @@
       "name": "Read file with XLSX type"
     },
     {
+      "type": "checkIDCard",
+      "name": "Check Nif"
+    },
+    {
       "type": "writeXLSX",
       "name": "Write file with XLSX type"
     }

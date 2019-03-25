@@ -7,6 +7,7 @@ const json = require('./config/tree.json');
 //Tasks
 const readXLSX = require('./tasks/readXLSX');
 const writeXLSX = require('./tasks/writeXLSX');
+const checkIDCard = require('./tasks/checkIDCard');
 
 var importer = new BehaviorTreeImporter();
 

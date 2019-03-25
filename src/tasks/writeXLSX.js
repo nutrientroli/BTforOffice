@@ -3,6 +3,7 @@
 const { Task, SUCCESS, FAILURE, BehaviorTree } = require('behaviortree');
 const XLSX = require('xlsx');
 
+//Behavior Tree implementation
 const writeXLSX = new Task({
   start: function(blackboard) {
     this.list = blackboard.list;
@@ -19,6 +20,9 @@ const writeXLSX = new Task({
   }
 });
 
+//References
 BehaviorTree.register('writeXLSX', writeXLSX);
-
 module.exports = writeXLSX;
+
+//Extra functions
+//...
