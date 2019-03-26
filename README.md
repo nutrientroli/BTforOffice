@@ -7,6 +7,8 @@ You can, in a modular way, alternate and place tasks according to the expected u
 
 The project is an example of implementation. As far as tasks are concerned, they are not intended to be useful in all areas.
 
+project inspired by https://github.com/Calamari/BehaviorTree.js
+
 ## Roadmap
  - BT implementation. (done)
  - Task Template. (done)
