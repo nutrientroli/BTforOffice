@@ -7,8 +7,8 @@
       "name": "Read file with XLSX type"
     },
     {
-      "type": "checkIDCard",
-      "name": "Check Nif"
+      "type": "upperCase",
+      "name": "upperCase"
     },
     {
       "type": "writeXLSX",

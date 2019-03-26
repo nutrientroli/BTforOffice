@@ -8,6 +8,7 @@ const json = require('./config/tree.json');
 const readXLSX = require('./tasks/readXLSX');
 const writeXLSX = require('./tasks/writeXLSX');
 const checkIDCard = require('./tasks/checkIDCard');
+const upperCase = require('./tasks/upperCase');
 
 var importer = new BehaviorTreeImporter();
 
