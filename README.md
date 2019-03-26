@@ -7,14 +7,17 @@ You can, in a modular way, alternate and place tasks according to the expected u
 
 The project is an example of implementation. As far as tasks are concerned, they are not intended to be useful in all areas.
 
-Roadmap:
+## Roadmap
  - BT implementation. (done)
  - Task Template. (done)
  - Json Importer implementation. (done)
  - Dynamic Blackboard. (to do) 
  - Graph editor. (to do) [Another project?]
  
- 
+## Installation
+Clone repository and run with "node index.js" command (Requires NodeJs).
+
+
 
 
 
