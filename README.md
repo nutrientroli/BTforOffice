@@ -7,12 +7,13 @@ You can, in a modular way, alternate and place tasks according to the expected u
 
 The project is an example of implementation. As far as tasks are concerned, they are not intended to be useful in all areas.
 
-project inspired by https://github.com/Calamari/BehaviorTree.js
+project based by https://github.com/Calamari/BehaviorTree.js (CalamariBT)
 
 ## Roadmap
- - BT implementation. (done)
- - Task Template. (done)
- - Json Importer implementation. (done)
+ - BT implementation. Based by CalamariBT (done)
+ - Task Template. Based by CalamariBT (done)
+ - Json Importer implementation. Based by CalamariBT (done)
+ - Tasks Examples. (doing)
  - Dynamic Blackboard. (to do) 
  - Graph editor. (to do) [Another project?]
  
