@@ -10,7 +10,7 @@ blackboard.setup = function(json) {
     aParams.push(json['nodes'][i]['params'][0]);
   }
   for(let i=0; i<aParams.length; i++){
-   let aKeys = [];
+    let aKeys = [];
     for (let key in aParams[i]){
         blackboard.addToParams(key, aParams[i][key], blackboard.params);
         aKeys.push(key);
