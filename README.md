@@ -13,8 +13,8 @@ project based by https://github.com/Calamari/BehaviorTree.js (CalamariBT)
  - BT implementation. Based by CalamariBT (done)
  - Task Template. Based by CalamariBT (done)
  - Json Importer implementation. Based by CalamariBT (done)
+ - Dynamic Blackboard. (done) 
  - Tasks Examples. (doing)
- - Dynamic Blackboard. (to do) 
  - Graph editor. (to do) [Another project?]
  
 ## Installation
