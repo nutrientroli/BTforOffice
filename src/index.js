@@ -10,11 +10,10 @@ const writeXLSX = require('./tasks/writeXLSX');
 const checkIDCard = require('./tasks/checkIDCard');
 const upperCase = require('./tasks/upperCase');
 
+bb.setup(json);
 var importer = new BehaviorTreeImporter();
-
 var bt = new BehaviorTree({
   tree: importer.parse(json),
   blackboard: bb
 });
-
 bt.step();

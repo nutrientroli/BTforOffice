@@ -4,15 +4,42 @@
   "nodes": [
     {
       "type": "readXLSX",
-      "name": "Read file with XLSX type"
+      "name": "Read file with XLSX type",
+      "params": [
+          {
+            "param1": "../test.xlsx",
+            "param2": []
+          }
+      ]
     },
     {
       "type": "upperCase",
-      "name": "upperCase"
+      "name": "upperCase",
+      "params": [
+          {
+            "param2": ""
+          }
+      ]
+    },
+    {
+      "type": "checkIDCard",
+      "name": "checkIDCard",
+      "params": [
+          {
+            "param2": "",
+            "param4": 0
+          }
+      ]
     },
     {
       "type": "writeXLSX",
-      "name": "Write file with XLSX type"
+      "name": "Write file with XLSX type",
+      "params": [
+          {
+            "param2": "",
+            "param3": "../result.xlsx"
+          }
+      ]
     }
   ]
 }

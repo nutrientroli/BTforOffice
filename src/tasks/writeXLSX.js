@@ -6,10 +6,12 @@ const XLSX = require('xlsx');
 //Behavior Tree implementation
 const writeXLSX = new Task({
   start: function(blackboard) {
-    this.list = blackboard.list;
-    this.file = blackboard.writefile;
+    this.list = blackboard.params[blackboard.keys[blackboard.indexKey][0]];
+    this.file = blackboard.params[blackboard.keys[blackboard.indexKey][1]];
   },
-  end: function(blackboard) { },
+  end: function(blackboard) {
+    blackboard.indexKey++;
+  },
   run: function(blackboard) {
     var worksheet = XLSX.utils.aoa_to_sheet(this.list);
     var workbook = XLSX.utils.book_new();

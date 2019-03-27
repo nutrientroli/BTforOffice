@@ -6,10 +6,11 @@ const XLSX = require('xlsx');
 //Behavior Tree implementation
 const readXLSX = new Task({
   start: function(blackboard) {
-    this.file = blackboard.readfile;
+    this.file = blackboard.params[blackboard.keys[blackboard.indexKey][0]];
   },
   end: function(blackboard) {
-    blackboard.list = this.list;
+    blackboard.params[blackboard.keys[blackboard.indexKey][1]] = this.list;
+    blackboard.indexKey++;
   },
   run: function(blackboard) {
     this.list = [];
